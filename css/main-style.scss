@@ -1,0 +1,118 @@
+/// the main prefixes and siting for the website
+
+@import "SASS/main";
+
+///
+header {
+	width: 100vw;
+	height: $Header-hight;
+	z-index: 1000;
+	.Container {
+		height: 100%;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		.Logo {
+			a {
+				cursor: pointer;
+				font-size: 2rem;
+				font-weight: 400;
+				// color: $TColor;
+			}
+		}
+		nav {
+			// font-size: $SFontSize;
+			width: $NavWidth;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			ul {
+				width: 100%;
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				justify-content: space-between;
+				a {
+					// color: $TColor;
+				}
+
+				a:hover {
+					// color: $STColor;
+				}
+			}
+			.nList {
+				width: 30px;
+				height: 20px;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				align-items: center;
+			}
+			.nList span:nth-child(1) {
+				display: none;
+			}
+			.nList span:nth-child(2),
+			.nList span:nth-child(3),
+			.nList span:nth-child(4) {
+				width: 100%;
+				height: 3px;
+				background-color: black;
+			}
+			.navList span:nth-child(1) {
+				position: absolute;
+				top: 20px;
+				right: 40px;
+				display: block;
+				font-size: 3rem;
+			}
+			.navList span:nth-child(2),
+			.navList span:nth-child(3),
+			.navList span:nth-child(4) {
+				display: none;
+			}
+		}
+		.exbend {
+			width: 100vw;
+			height: 100vh;
+			position: absolute;
+			top: -100%;
+			right: 0px;
+			background-color: black;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			animation-name: navOpen;
+			animation-duration: 1s;
+			animation-timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.28);
+			animation-fill-mode: forwards;
+			z-index: 10;
+		}
+		@keyframes navOpen {
+			to {
+				top: 0%;
+			}
+		}
+	}
+}
+///
+
+section {
+	width: 100vw;
+	height: 100vh;
+	.Container {
+		height: 100%;
+		.Hero {
+			@include flexForPhon(Hero);
+			height: calc(100vh - #{$Header-hight});
+			.Hero-Text {
+			}
+			.Hero-Star {
+			}
+		}
+	}
+}
+
+/// MediaQueries
+@import "SASS/MediaQueries";
+///

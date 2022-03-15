@@ -1,0 +1,102 @@
+/// variables
+$Header-hight: 6rem;
+$NavWidth: 50%;
+// $Main-Font: ;
+// $TColor: ;
+// $STColor: ;
+// $SFontSize: ;
+
+///
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	text-decoration: none;
+	text-transform: capitalize;
+}
+html {
+	scroll-behavior: smooth;
+	font-size: 12px;
+}
+body {
+	// font-family: $Main-Font;
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+	overflow-y: overlay;
+	.Container {
+		margin-inline: auto;
+	}
+}
+a,
+li,
+ul,
+button {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	color: black;
+}
+// span {
+// 	font-size: $SFontSize;
+// 	color: $STColor;
+// }
+// h3 {
+// 	color: $TColor;
+// 	font-size: 4rem;
+// 	font-weight: bolder;
+// 	margin: 0;
+// }
+// p {
+// 	color: ;
+// 	font-size: $SFontSize;
+// }
+button,
+[button] {
+	// border: 3px solid $TColor;
+	border-radius: 5px;
+	background-color: transparent;
+	// color: $TColor;
+	font-weight: 700;
+	// font-size: $SFontSize;
+	padding: 0.5rem 2.2rem;
+	margin: 8px;
+	line-height: 1.5;
+	white-space: nowrap;
+	overflow: hidden;
+	cursor: pointer;
+	display: inline-flex;
+	justify-content: center;
+	text-align: center;
+}
+// [button]:hover,
+// button:hover {
+// 	background-color: $STColor;
+// 	color: white;
+// }
+///
+/// mixin and custom property
+
+@mixin flexForPhon($Name) {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: row;
+	// align-items: center;
+	.#{$Name}-Text,
+	.#{$Name}-Star {
+		width: 50%;
+		height: 100%;
+	}
+	@media screen and (max-width: 769px) {
+		& {
+			flex-direction: column;
+		}
+		.#{$Name}-Text,
+		.#{$Name}-Star {
+			width: 100%;
+			height: 50%;
+		}
+	}
+}
