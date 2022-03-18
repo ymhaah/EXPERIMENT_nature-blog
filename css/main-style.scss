@@ -3,10 +3,57 @@
 @import "SASS/main";
 
 ///
+
+.main__icon {
+	position: fixed;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 7rem;
+	z-index: 1001;
+	left: 3%;
+	top: 40%;
+	img {
+		width: 1.7rem;
+		cursor: pointer;
+		filter: drop-shadow(6px 6px 20px rgb(0, 0, 0, 60%));
+		transition: all 300ms;
+		&:hover {
+			transform: scale(1.2, 1.2);
+		}
+	}
+	&::before,
+	&::after {
+		position: absolute;
+	}
+	&::before {
+		content: "";
+		width: 1px;
+		height: 5rem;
+		top: 7.5rem;
+		left: 45%;
+		background-color: black;
+	}
+	&::after {
+		content: "Follow Me";
+		top: 17.5rem;
+		right: 0;
+		left: 0;
+		font-size: 1.5rem;
+		font-weight: 400;
+		transform: rotate(-90deg);
+		line-height: 1.2;
+		margin: 0;
+		white-space: nowrap;
+		letter-spacing: 0.5px;
+	}
+}
+
 header {
 	width: 100vw;
 	height: $Header-hight;
 	z-index: 1000;
+	box-shadow: 0px 10px 20px 0px rgb(0, 0, 0, 30%);
 	.Container {
 		height: 100%;
 		display: flex;
@@ -15,14 +62,12 @@ header {
 		justify-content: space-between;
 		.Logo {
 			a {
-				cursor: pointer;
-				font-size: 2rem;
 				font-weight: 400;
-				// color: $TColor;
+				font-size: 3rem;
 			}
 		}
 		nav {
-			// font-size: $SFontSize;
+			font-size: $SFontSize;
 			width: $NavWidth;
 			display: flex;
 			flex-direction: row;
@@ -34,11 +79,13 @@ header {
 				align-items: center;
 				justify-content: space-between;
 				a {
+					font-weight: 300;
+					font-size: $SFontSize;
 					// color: $TColor;
+					transition: all 300ms;
 				}
-
 				a:hover {
-					// color: $STColor;
+					transform: scale(1.5, 1.5);
 				}
 			}
 			.nList {
@@ -56,7 +103,7 @@ header {
 			.nList span:nth-child(3),
 			.nList span:nth-child(4) {
 				width: 100%;
-				height: 3px;
+				height: 2px;
 				background-color: black;
 			}
 			.navList span:nth-child(1) {
@@ -64,7 +111,7 @@ header {
 				top: 20px;
 				right: 40px;
 				display: block;
-				font-size: 3rem;
+				font-size: 2.5rem;
 			}
 			.navList span:nth-child(2),
 			.navList span:nth-child(3),
@@ -78,7 +125,7 @@ header {
 			position: absolute;
 			top: -100%;
 			right: 0px;
-			background-color: black;
+			background-color: white;
 			display: flex;
 			justify-content: center;
 			align-items: center;
@@ -99,7 +146,8 @@ header {
 
 section {
 	width: 100vw;
-	height: 100vh;
+	height: calc(100vh - #{$Header-hight});
+
 	.Container {
 		height: 100%;
 		.Hero {

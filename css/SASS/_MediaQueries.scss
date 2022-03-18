@@ -3,7 +3,7 @@
 		font-size: 18px;
 	}
 	.Container {
-		width: 75%;
+		width: 80%;
 	}
 }
 /*For 4K */
@@ -26,13 +26,15 @@
 		font-size: 10px;
 	}
 	.Container {
-		width: 80%;
 	}
 }
 @media screen and (min-width: 1024px) {
 } /*For laptop, S-Monitor */
 
 @media screen and (min-width: 769px) {
+	header .Container nav .nList {
+		display: none;
+	}
 }
 
 @media screen and (max-width: 768px) {

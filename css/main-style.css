@@ -1,219 +1,275 @@
 *,
 *::before,
 *::after {
-	box-sizing: border-box;
-	text-decoration: none;
-	text-transform: capitalize;
+  box-sizing: border-box;
+  text-decoration: none;
+  text-transform: capitalize;
 }
 
 html {
-	scroll-behavior: smooth;
-	font-size: 12px;
+  scroll-behavior: smooth;
+  font-size: 12px;
 }
 
 body {
-	margin: 0;
-	padding: 0;
-	overflow-x: hidden;
-	overflow-y: overlay;
+  font-family: "Roboto Condensed", sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: overlay;
+  position: relative;
 }
 body .Container {
-	margin-inline: auto;
+  margin-inline: auto;
 }
 
 a,
 li,
 ul,
 button {
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-	color: black;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  color: black;
 }
 
 button,
 [button] {
-	border-radius: 5px;
-	background-color: transparent;
-	font-weight: 700;
-	padding: 0.5rem 2.2rem;
-	margin: 8px;
-	line-height: 1.5;
-	white-space: nowrap;
-	overflow: hidden;
-	cursor: pointer;
-	display: inline-flex;
-	justify-content: center;
-	text-align: center;
+  border-radius: 5px;
+  background-color: transparent;
+  font-weight: 700;
+  padding: 0.5rem 2.2rem;
+  margin: 8px;
+  line-height: 1.5;
+  white-space: nowrap;
+  overflow: hidden;
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.main__icon {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 7rem;
+  z-index: 1001;
+  left: 3%;
+  top: 40%;
+}
+.main__icon img {
+  width: 1.7rem;
+  cursor: pointer;
+  filter: drop-shadow(6px 6px 20px rgba(0, 0, 0, 0.6));
+  transition: all 300ms;
+}
+.main__icon img:hover {
+  transform: scale(1.2, 1.2);
+}
+.main__icon::before, .main__icon::after {
+  position: absolute;
+}
+.main__icon::before {
+  content: "";
+  width: 1px;
+  height: 5rem;
+  top: 7.5rem;
+  left: 45%;
+  background-color: black;
+}
+.main__icon::after {
+  content: "Follow Me";
+  top: 17.5rem;
+  right: 0;
+  left: 0;
+  font-size: 1.5rem;
+  font-weight: 400;
+  transform: rotate(-90deg);
+  line-height: 1.2;
+  margin: 0;
+  white-space: nowrap;
+  letter-spacing: 0.5px;
 }
 
 header {
-	width: 100vw;
-	height: 6rem;
-	z-index: 1000;
+  width: 100vw;
+  height: 7rem;
+  z-index: 1000;
+  box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.3);
 }
 header .Container {
-	height: 100%;
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: space-between;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
 header .Container .Logo a {
-	cursor: pointer;
-	font-size: 2rem;
-	font-weight: 400;
+  font-weight: 400;
+  font-size: 3rem;
 }
 header .Container nav {
-	width: 50%;
-	display: flex;
-	flex-direction: row;
-	align-items: center;
+  font-size: 2rem;
+  width: 30%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 header .Container nav ul {
-	width: 100%;
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: space-between;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+header .Container nav ul a {
+  font-weight: 300;
+  font-size: 2rem;
+  transition: all 300ms;
+}
+header .Container nav ul a:hover {
+  transform: scale(1.5, 1.5);
 }
 header .Container nav .nList {
-	width: 30px;
-	height: 20px;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	align-items: center;
+  width: 30px;
+  height: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 header .Container nav .nList span:nth-child(1) {
-	display: none;
+  display: none;
 }
 header .Container nav .nList span:nth-child(2),
 header .Container nav .nList span:nth-child(3),
 header .Container nav .nList span:nth-child(4) {
-	width: 100%;
-	height: 3px;
-	background-color: black;
+  width: 100%;
+  height: 2px;
+  background-color: black;
 }
 header .Container nav .navList span:nth-child(1) {
-	position: absolute;
-	top: 20px;
-	right: 40px;
-	display: block;
-	font-size: 3rem;
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  display: block;
+  font-size: 2.5rem;
 }
 header .Container nav .navList span:nth-child(2),
 header .Container nav .navList span:nth-child(3),
 header .Container nav .navList span:nth-child(4) {
-	display: none;
+  display: none;
 }
 header .Container .exbend {
-	width: 100vw;
-	height: 100vh;
-	position: absolute;
-	top: -100%;
-	right: 0px;
-	background-color: black;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	-webkit-animation-name: navOpen;
-	animation-name: navOpen;
-	-webkit-animation-duration: 1s;
-	animation-duration: 1s;
-	-webkit-animation-timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.28);
-	animation-timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.28);
-	-webkit-animation-fill-mode: forwards;
-	animation-fill-mode: forwards;
-	z-index: 10;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: -100%;
+  right: 0px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-animation-name: navOpen;
+          animation-name: navOpen;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.28);
+          animation-timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.28);
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  z-index: 10;
 }
 @-webkit-keyframes navOpen {
-	to {
-		top: 0%;
-	}
+  to {
+    top: 0%;
+  }
 }
 @keyframes navOpen {
-	to {
-		top: 0%;
-	}
+  to {
+    top: 0%;
+  }
 }
 
 section {
-	width: 100vw;
-	height: 100vh;
+  width: 100vw;
+  height: calc(100vh - 7rem);
 }
 section .Container {
-	height: 100%;
+  height: 100%;
 }
 section .Container .Hero {
-	width: 100%;
-	height: 100%;
-	display: flex;
-	flex-direction: row;
-	height: calc(100vh - 6rem);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  height: calc(100vh - 7rem);
 }
 section .Container .Hero .Hero-Text,
 section .Container .Hero .Hero-Star {
-	width: 50%;
-	height: 100%;
+  width: 50%;
+  height: 100%;
 }
 @media screen and (max-width: 769px) {
-	section .Container .Hero {
-		flex-direction: column;
-	}
-	section .Container .Hero .Hero-Text,
-	section .Container .Hero .Hero-Star {
-		width: 100%;
-		height: 50%;
-	}
+  section .Container .Hero {
+    flex-direction: column;
+  }
+  section .Container .Hero .Hero-Text,
+section .Container .Hero .Hero-Star {
+    width: 100%;
+    height: 50%;
+  }
 }
 @media screen and (max-width: 2560px) {
-	html {
-		font-size: 18px;
-	}
+  html {
+    font-size: 18px;
+  }
 
-	.Container {
-		width: 75%;
-	}
+  .Container {
+    width: 80%;
+  }
 }
 /*For 4K */
 @media screen and (max-width: 1600px) {
-	html {
-		font-size: 12px;
-	}
+  html {
+    font-size: 12px;
+  }
 }
 /*For L Monitor */
 /*For Monitor */
 @media screen and (max-width: 1024px) {
-	html {
-		font-size: 10px;
-	}
-
-	.Container {
-		width: 80%;
-	}
+  html {
+    font-size: 10px;
+  }
 }
 /*For laptop, S-Monitor */
+@media screen and (min-width: 769px) {
+  header .Container nav .nList {
+    display: none;
+  }
+}
 @media screen and (max-width: 768px) {
-	header .Container nav {
-		width: auto;
-	}
-	header .Container nav ul {
-		display: none;
-	}
-	header .Container .exbend ul {
-		width: 100%;
-		height: 60%;
-		display: flex;
-		flex-direction: column;
-		justify-content: space-evenly;
-		font-size: 3rem;
-	}
+  header .Container nav {
+    width: auto;
+  }
+  header .Container nav ul {
+    display: none;
+  }
+  header .Container .exbend ul {
+    width: 100%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    font-size: 3rem;
+  }
 
-	button,
-	[button] {
-		width: 100%;
-	}
+  button,
+[button] {
+    width: 100%;
+  }
 }
 /*For tablets */
-/*For S phones */ /*# sourceMappingURL=main-style.css.map */
+/*For S phones *//*# sourceMappingURL=main-style.css.map */
