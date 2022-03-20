@@ -33,13 +33,28 @@ button {
   color: black;
 }
 
+h1 {
+  font-size: 4rem;
+  font-weight: bolder;
+  margin: 0;
+  color: white;
+}
+
+p {
+  font-size: 2rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
 button,
 [button] {
+  border: 1px solid white;
   border-radius: 5px;
   background-color: transparent;
-  font-weight: 700;
+  color: white;
+  font-weight: 400;
+  font-size: 2rem;
   padding: 0.5rem 2.2rem;
-  margin: 8px;
+  margin-right: 8px;
   line-height: 1.5;
   white-space: nowrap;
   overflow: hidden;
@@ -66,7 +81,7 @@ button,
   transition: all 300ms;
 }
 .main__icon img:hover {
-  transform: scale(1.2, 1.2);
+  transform: scale(1.2, 1.2) rotate(10deg);
 }
 .main__icon::before, .main__icon::after {
   position: absolute;
@@ -77,7 +92,7 @@ button,
   height: 5rem;
   top: 7.5rem;
   left: 45%;
-  background-color: black;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 .main__icon::after {
   content: "Follow Me";
@@ -85,6 +100,7 @@ button,
   right: 0;
   left: 0;
   font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.5);
   font-weight: 400;
   transform: rotate(-90deg);
   line-height: 1.2;
@@ -96,8 +112,11 @@ button,
 header {
   width: 100vw;
   height: 7rem;
+  position: fixed;
   z-index: 1000;
-  box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.3);
+  top: 0;
+  left: 0;
+  background-color: transparent;
 }
 header .Container {
   height: 100%;
@@ -109,10 +128,11 @@ header .Container {
 header .Container .Logo a {
   font-weight: 400;
   font-size: 3rem;
+  color: white;
 }
 header .Container nav {
   font-size: 2rem;
-  width: 30%;
+  width: 40%;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -127,6 +147,7 @@ header .Container nav ul {
 header .Container nav ul a {
   font-weight: 300;
   font-size: 2rem;
+  color: white;
   transition: all 300ms;
 }
 header .Container nav ul a:hover {
@@ -148,7 +169,7 @@ header .Container nav .nList span:nth-child(3),
 header .Container nav .nList span:nth-child(4) {
   width: 100%;
   height: 2px;
-  background-color: black;
+  background-color: white;
 }
 header .Container nav .navList span:nth-child(1) {
   position: absolute;
@@ -168,7 +189,7 @@ header .Container .exbend {
   position: absolute;
   top: -100%;
   right: 0px;
-  background-color: white;
+  background-color: #e94560;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -195,33 +216,62 @@ header .Container .exbend {
 
 section {
   width: 100vw;
-  height: calc(100vh - 7rem);
+  height: 100vh;
 }
-section .Container {
-  height: 100%;
-}
-section .Container .Hero {
+section .Hero {
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: row;
-  height: calc(100vh - 7rem);
 }
-section .Container .Hero .Hero-Text,
-section .Container .Hero .Hero-Star {
+section .Hero .Hero-Text,
+section .Hero .Hero-Star {
   width: 50%;
   height: 100%;
 }
 @media screen and (max-width: 769px) {
-  section .Container .Hero {
-    flex-direction: column;
+  section .Hero {
+    flex-direction: column-reverse;
+    text-align: center;
   }
-  section .Container .Hero .Hero-Text,
-section .Container .Hero .Hero-Star {
+  section .Hero .Hero-Text,
+section .Hero .Hero-Star {
     width: 100%;
     height: 50%;
   }
 }
+section .Hero .Hero-Text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #121212;
+  padding: 0 10%;
+}
+section .Hero .Hero-Star {
+  background: url(resources/pexels-josh-hild-2438779.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right;
+  filter: grayscale(40%) brightness(80%) saturate(150%);
+}
+
+.netflex {
+  height: 100%;
+  width: 50%;
+  position: absolute;
+  top: 0;
+  z-index: 100;
+  right: 0;
+  background: linear-gradient(90deg, #121212 0%, rgba(18, 18, 18, 0.7) 20%, rgba(18, 18, 18, 0.3) 50%, rgba(18, 18, 18, 0) 100%);
+}
+@media screen and (max-width: 769px) {
+  .netflex {
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(0deg, #121212 0%, rgba(18, 18, 18, 0.7) 20%, rgba(18, 18, 18, 0.3) 50%, rgba(18, 18, 18, 0) 100%);
+  }
+}
+
 @media screen and (max-width: 2560px) {
   html {
     font-size: 18px;

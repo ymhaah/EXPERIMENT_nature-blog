@@ -1,9 +1,9 @@
 /// variables
 $Header-hight: 7rem;
-$NavWidth: 30%;
+$NavWidth: 40%;
 $Main-Font: "Roboto Condensed", sans-serif;
-// $TColor: ;
-// $STColor: ;
+$TColor: rgb(255, 255, 255);
+$STColor: rgba(255, 255, 255, 0.5);
 $MFontSize: 4rem;
 $SFontSize: 2rem;
 
@@ -40,30 +40,27 @@ button {
 	padding: 0;
 	color: black;
 }
-// span {
-// 	font-size: $SFontSize;
-// 	color: $STColor;
-// }
-// h3 {
-// 	color: $TColor;
-// 	font-size: 4rem;
-// 	font-weight: bolder;
-// 	margin: 0;
-// }
-// p {
-// 	color: ;
-// 	font-size: $SFontSize;
-// }
+
+h1 {
+	font-size: $MFontSize;
+	font-weight: bolder;
+	margin: 0;
+	color: $TColor;
+}
+p {
+	font-size: $SFontSize;
+	color: $STColor;
+}
 button,
 [button] {
-	// border: 3px solid $TColor;
+	border: 1px solid $TColor;
 	border-radius: 5px;
 	background-color: transparent;
-	// color: $TColor;
-	font-weight: 700;
-	// font-size: $SFontSize;
+	color: $TColor;
+	font-weight: 400;
+	font-size: $SFontSize;
 	padding: 0.5rem 2.2rem;
-	margin: 8px;
+	margin-right: 8px;
 	line-height: 1.5;
 	white-space: nowrap;
 	overflow: hidden;
@@ -72,11 +69,7 @@ button,
 	justify-content: center;
 	text-align: center;
 }
-// [button]:hover,
-// button:hover {
-// 	background-color: $STColor;
-// 	color: white;
-// }
+
 ///
 /// mixin and custom property
 
@@ -85,7 +78,6 @@ button,
 	height: 100%;
 	display: flex;
 	flex-direction: row;
-	// align-items: center;
 	.#{$Name}-Text,
 	.#{$Name}-Star {
 		width: 50%;
@@ -93,7 +85,8 @@ button,
 	}
 	@media screen and (max-width: 769px) {
 		& {
-			flex-direction: column;
+			flex-direction: column-reverse;
+			text-align: center;
 		}
 		.#{$Name}-Text,
 		.#{$Name}-Star {
